@@ -9,8 +9,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
-            background-color: #ffccdc;
-            background-image: url('https://www.transparenttextures.com/patterns/hearts.png'); /* Small hearts pattern */
+            background-color: #ffd6e0; /* Soft pink */
+            background-image: url('https://www.transparenttextures.com/patterns/hearts.png'); /* Hearts pattern */
         }
         .container {
             max-width: 400px;
@@ -46,13 +46,18 @@
 <body>
 
     <div class="container">
-        <h2>💖 Will you be my valentine? 💖</h2>
+        <h2>💖 Do you want to see the letter? 💖</h2>
         <button onclick="goToLetter()">Yes</button>
         <button onclick="showWarning()">No</button>
         <p id="warning">❌ You must click "Yes" to proceed! ❌</p>
     </div>
 
     <script>
+        // Redirect if not authenticated
+        if (sessionStorage.getItem("authenticated") !== "true") {
+            window.location.href = "password.html";
+        }
+
         function goToLetter() {
             window.location.href = "letter.html";
         }
